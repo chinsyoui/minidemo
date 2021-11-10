@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"  @click="onButtonClick()"></image>
+		<image class="logo" src="/static/logo.png" @click="onButtonClick()"></image>
 		<intro class="intro" id="intro" ref="intro"/>
 		<view>
 			<text class="title">{{title}}</text>
@@ -9,7 +9,12 @@
 </template>
 
 <script>
+	import intro from "@/views/intro.vue";
+
 	export default {
+		components: {
+			intro
+		},
 		data() {
 			return {
 				title: 'Hello'
@@ -19,7 +24,9 @@
 		},
 		methods: {
 			onButtonClick() {
-				console.log("onButtonClick Inner");
+				console.log("index.vue - onButtonClick");
+                console.log("this.$refs.intro = ",this.$refs.intro);
+                this.$refs.intro.init();
 				console.log(this.$refs);
 			}
 		}
