@@ -1,6 +1,7 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
+		<image class="logo" src="/static/logo.png"  @click="onButtonClick()"></image>
+		<intro class="intro" id="intro" ref="intro"/>
 		<view>
 			<text class="title">{{title}}</text>
 		</view>
@@ -15,10 +16,12 @@
 			}
 		},
 		onLoad() {
-
 		},
 		methods: {
-
+			onButtonClick() {
+				console.log("onButtonClick Inner");
+				console.log(this.$refs);
+			}
 		}
 	}
 </script>
@@ -29,6 +32,13 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.intro {
+		height: 200rpx;
+		width: 200rpx;
+		margin: 200rpx auto 50rpx auto;
+
 	}
 
 	.logo {
