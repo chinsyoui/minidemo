@@ -1,14 +1,12 @@
 <template>
 	<view class="outer-wrapper">
-		<div class="top">
-			this is top tool
-		</div>
+		<view class="top" >
+			top
+		</view>
 		<view class="center">
 			<canvas id="myCanvas" canvas-id="myCanvas"></canvas>
 		</view>
-		<div class="bottom">
-			this is bottom tool
-		</div>
+			<view class="bottom" />
 	</view>
 </template>
 
