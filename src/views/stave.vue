@@ -22,15 +22,17 @@ export default {
 	vfRenderer: null, // new VF.Renderer(crc2d,0)
 
 	data() {
-		return {};
+		return {
+			canvasWidth: null,
+			canvasHeight: null,
+		};
 	},
 	mounted() {
-		let width = document.getElementById("myCanvas").offsetWidth;
-		let height = document.getElementById("myCanvas").offsetHeight;
-		console.log(width, height);
+		this.canvasWidth = document.getElementById("myCanvas").offsetWidth;
+		this.canvasHeight = document.getElementById("myCanvas").offsetHeight;
 		var cxt = uni.createCanvasContext("myCanvas", this);
 		cxt.setFillStyle("rgba(0, 255, 255, 0.5)"); // 背景透明色
-		cxt.fillRect(0, 0, width, height); //fillRect(x,y,宽度，高度)
+		cxt.fillRect(0, 0, this.canvasWidth, this.canvasHeight); //fillRect(x,y,宽度，高度)
 		cxt.setFontSize(14); //设置字体大小，默认10
 		cxt.setFillStyle("#e31d1a"); // 颜色
 
