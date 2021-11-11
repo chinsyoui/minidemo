@@ -1,49 +1,50 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png" @click="onButtonClick()"></image>
+		<!-- <image class="logo" src="/static/logo.png" @click="onButtonClick()"></image>
 		<view>
 			<text class="title">{{title}}</text>
-		</view>
+		</view> -->
 		<intro class="intro" id="intro" ref="intro" />
-        <stave ref="stave"/>
+		<stave class="stave" id="stave" ref="stave" />
+		<!-- <stave class="stave" id="stave" ref="stave" /> -->
 	</view>
 </template>
 
 <script>
-	import intro from "@/views/intro.vue";
-	import stave from "@/views/stave.vue";
+import intro from "@/views/intro.vue";
+import stave from "@/views/stave.vue";
 
-	export default {
-		components: {
-			intro,
-            stave
-        },
-        data() {
-            return {
-                title: "Hello",
-            };
-        },
-        mounted() {
-            var cxt = uni.createCanvasContext("myCanvas", this);
-            cxt.setFillStyle("rgba(0, 255, 255, 0.5)"); // 背景透明色
-            cxt.fillRect(20, 0, 300, 500); //fillRect(x,y,宽度，高度)
-            cxt.setFontSize(14); //设置字体大小，默认10
-            cxt.setFillStyle("#e31d1a"); // 颜色
-            cxt.font = "20px Georgia";
-            cxt.fillText("Hello World!", 0, 50);
-            cxt.fillText("Big smile!", 0, 90);
-            cxt.draw();
-        },
-        onLoad() {},
-        methods: {
-            onButtonClick() {
-                console.log("index.vue - onButtonClick");
-                console.log("this.$refs.intro = ", this.$refs.intro);
-                this.$refs.intro.init();
-                this.$refs.stave.init();
-            },
-        }
-    }
+export default {
+	components: {
+		intro,
+		stave
+	},
+	data() {
+		return {
+			title: "Hello",
+		};
+	},
+	mounted() {
+		// var cxt = uni.createCanvasContext("myCanvas", this);
+		// cxt.setFillStyle("rgba(0, 255, 255, 0.5)"); // 背景透明色
+		// cxt.fillRect(20, 0, 300, 500); //fillRect(x,y,宽度，高度)
+		// cxt.setFontSize(14); //设置字体大小，默认10
+		// cxt.setFillStyle("#e31d1a"); // 颜色
+		// cxt.font = "20px Georgia";
+		// cxt.fillText("Hello World!", 0, 50);
+		// cxt.fillText("Big smile!", 0, 90);
+		// cxt.draw();
+	},
+	onLoad() {},
+	methods: {
+		onButtonClick() {
+			console.log("index.vue - onButtonClick");
+			console.log("this.$refs.intro = ", this.$refs.intro);
+			this.$refs.intro.init();
+			this.$refs.stave.init();
+		},
+	},
+};
 </script>
 
 <style>
